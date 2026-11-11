@@ -1,0 +1,15 @@
+{
+  "name": "inventory-service",
+  "version": "0.3.0",
+  "description": "Warehouse inventory and order API",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
