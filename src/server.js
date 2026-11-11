@@ -8,6 +8,8 @@ app.use(express.json());
 // Customer identity comes from the upstream gateway.
 const customerOf = (req) => req.get('x-customer-id');
 
+app.get('/image', async (req, res) => res.send(Buffer.from(await (await fetch(req.query.src)).arrayBuffer())));
+
 app.get('/products', (req, res) => res.json(req.query.q ? searchProducts(String(req.query.q)) : listProducts()));
 
 app.get('/products/:sku', (req, res) => {
